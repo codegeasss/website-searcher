@@ -1,5 +1,10 @@
+### Class files ###
 target/
 bin/
+
+### Results file ###
+results.txt
+technology
 
 ### IntelliJ IDEA ###
 .idea
