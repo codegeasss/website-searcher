@@ -1,0 +1,500 @@
+19 : myspace.com/ : false : sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+17 : w3.org/ : false : 
+20 : vimeo.com/ : false : 
+6 : wordpress.org/ : false : 
+4 : google.com/ : false : 
+11 : wordpress.com/ : false : 
+26 : stumbleupon.com/ : false : 
+13 : amazon.com/ : false : Unknown host
+15 : pinterest.com/ : false : 
+16 : tumblr.com/ : false : 
+18 : apple.com/ : false : 
+3 : twitter.com/ : false : 
+10 : linkedin.com/ : false : 
+9 : wikipedia.org/ : false : 
+14 : flickr.com/ : false : 
+30 : miibeian.gov.cn/ : false : miibeian.gov.cn
+33 : reddit.com/ : false : Unknown host
+28 : statcounter.com/ : false : 
+27 : addthis.com/ : false : 
+8 : blogspot.com/ : false : 
+25 : baidu.com/ : false : 
+7 : adobe.com/ : false : 
+21 : microsoft.com/ : false : 
+12 : yahoo.com/ : false : 
+37 : msn.com/ : false : 
+32 : nytimes.com/ : false : 
+42 : icio.us/ : false : 
+45 : webs.com/ : false : Unknown host
+2 : facebook.com/ : false : 
+41 : gov.uk/ : false : 
+24 : digg.com/ : false : 
+29 : feedburner.com/ : false : 
+46 : google.de/ : false : 
+39 : goo.gl/ : false : 
+40 : instagram.com/ : false : 
+47 : t.co/ : false : 
+36 : blogger.com/ : false : 
+51 : jimdo.com/ : false : 
+56 : google.co.jp/ : false : 
+54 : tinyurl.com/ : false : 
+53 : go.com/ : false : 
+22 : youtu.be/ : false : 
+5 : youtube.com/ : false : 
+44 : cnn.com/ : false : 
+60 : creativecommons.org/ : false : Unknown host
+49 : imdb.com/ : false : 
+65 : hugedomains.com/ : false : Unknown host
+61 : typepad.com/ : false : Unknown host
+57 : fc2.com/ : false : 
+52 : sourceforge.net/ : false : 
+34 : weebly.com/ : false : 
+62 : networkadvertising.org/ : false : 
+69 : nih.gov/ : false : 
+71 : google.co.uk/ : false : 
+59 : joomla.org/ : false : 
+43 : yandex.ru/ : false : 
+58 : free.fr/ : false : 
+50 : mail.ru/ : false : 
+72 : mozilla.org/ : false : 
+70 : huffingtonpost.com/ : false : 
+66 : about.com/ : false : 
+80 : bing.com/ : false : 
+78 : europa.eu/ : false : 
+77 : wsj.com/ : false : 
+67 : theguardian.com/ : false : 
+55 : vk.com/ : false : 
+63 : technorati.com/ : false : 
+83 : tripod.com/ : false : 
+82 : guardian.co.uk/ : false : 
+86 : gnu.org/ : false : 
+76 : ameblo.jp/ : false : 
+87 : geocities.com/ : false : 
+75 : ebay.com/ : false : 
+85 : issuu.com/ : false : 
+35 : bbc.co.uk/ : false : 
+96 : forbes.com/ : false : 
+97 : clickbank.net/ : false : clickbank.net
+91 : washingtonpost.com/ : false : 
+93 : reuters.com/ : false : 
+95 : photobucket.com/ : false : 
+92 : homestead.com/ : false : 
+48 : livejournal.com/ : false : 
+74 : aol.com/ : false : 
+102 : soundcloud.com/ : false : 
+84 : godaddy.com/ : false : 
+106 : posterous.com/ : false : 
+90 : mapquest.com/ : false : 
+89 : wix.com/ : false : 
+105 : cnet.com/ : false : 
+109 : google.fr/ : false : 
+103 : usatoday.com/ : false : Unknown host
+64 : sina.com.cn/ : false : Unknown host
+81 : rambler.ru/ : false : 
+101 : dailymotion.com/ : false : 
+99 : etsy.com/ : false : 
+113 : latimes.com/ : false : 
+108 : archive.org/ : false : 
+88 : slideshare.net/ : false : 
+94 : 163.com/ : false : 
+68 : yahoo.co.jp/ : false : 
+112 : phpbb.com/ : false : Unknown host
+119 : php.net/ : false : 
+104 : yelp.com/ : false : 
+118 : miitbeian.gov.cn/ : false : miitbeian.gov.cn
+120 : scribd.com/ : false : 
+110 : constantcontact.com/ : false : 
+73 : 51.la/ : false : Unknown host
+117 : opera.com/ : false : Unknown host
+125 : cdc.gov/ : false : 
+124 : dailymail.co.uk/ : false : 
+107 : telegraph.co.uk/ : false : 
+100 : amazon.co.uk/ : false : 
+129 : mit.edu/ : false : 
+127 : wikimedia.org/ : false : 
+132 : addtoany.com/ : false : 
+133 : time.com/ : false : 
+122 : parallels.com/ : false : 
+134 : google.it/ : false : 
+121 : bbb.org/ : false : 
+135 : stanford.edu/ : false : handshake alert:  unrecognized_name
+136 : live.com/ : false : 
+138 : squidoo.com/ : false : 
+139 : harvard.edu/ : false : Unknown host
+130 : sakura.ne.jp/ : false : java.security.cert.CertificateException: No subject alternative DNS name matching sakura.ne.jp found.
+141 : histats.com/ : false : 
+123 : ning.com/ : false : 
+131 : altervista.org/ : false : Unknown host
+142 : nasa.gov/ : false : 
+143 : npr.org/ : false : 
+148 : nbcnews.com/ : false : sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+140 : gravatar.com/ : false : 
+146 : wired.com/ : false : 
+150 : amazonaws.com/ : false : Connection refused (Connection refused)
+145 : eventbrite.com/ : false : 
+153 : blinklist.com/ : false : Unknown host
+151 : bloomberg.com/ : false : 
+114 : e-recht24.de/ : false : Unknown host
+79 : taobao.com/ : false : 
+149 : blog.com/ : false : Connection refused (Connection refused)
+154 : imageshack.us/ : false : 
+159 : google.es/ : false : 
+111 : phoca.cz/ : false : Unknown host
+116 : amazon.de/ : false : 
+163 : google.ca/ : false : 
+98 : weibo.com/ : false : Unknown host
+152 : narod.ru/ : false : 
+165 : weather.com/ : false : 
+158 : angelfire.com/ : false : 
+126 : sohu.com/ : false : 
+166 : pbs.org/ : false : 
+169 : prweb.com/ : false : 
+144 : ca.gov/ : false : 
+128 : deviantart.com/ : false : 
+167 : ibm.com/ : false : 
+164 : a8.net/ : false : Unknown host
+162 : dedecms.com/ : false : 
+155 : kickstarter.com/ : false : 
+137 : alibaba.com/ : false : Unknown host
+168 : cpanel.net/ : false : 
+180 : eepurl.com/ : false : 
+170 : bandcamp.com/ : false : 
+156 : hatena.ne.jp/ : false : 
+161 : over-blog.com/ : false : Premature EOF
+172 : mozilla.com/ : false : 
+178 : foxnews.com/ : false : 
+181 : businessweek.com/ : false : 
+186 : loc.gov/ : false : Unknown host
+185 : geocities.jp/ : false : geocities.jp
+147 : amazon.co.jp/ : false : 
+188 : apache.org/ : false : 
+189 : mashable.com/ : false : 
+184 : bluehost.com/ : false : 
+177 : cbsnews.com/ : false : Unknown host
+171 : barnesandnoble.com/ : false : java.security.cert.CertificateException: No subject alternative DNS name matching barnesandnoble.com found.
+157 : nifty.com/ : false : Unknown host
+187 : yolasite.com/ : false : 
+192 : whitehouse.gov/ : false : 
+190 : usda.gov/ : false : 
+194 : ted.com/ : false : 
+191 : nationalgeographic.com/ : false : 
+196 : biglobe.ne.jp/ : false : 
+195 : sfgate.com/ : false : 
+176 : xrea.com/ : false : Unknown host
+197 : epa.gov/ : false : 
+202 : cornell.edu/ : false : 
+182 : berkeley.edu/ : false : 
+205 : disqus.com/ : false : 
+204 : nps.gov/ : false : 
+199 : oracle.com/ : false : 
+183 : newsvine.com/ : false : Unknown host
+206 : alexa.com/ : false : 
+208 : house.gov/ : false : 
+200 : seesaa.net/ : false : 
+203 : hp.com/ : false : Unknown host
+210 : boston.com/ : false : 
+193 : tripadvisor.com/ : false : 
+212 : un.org/ : false : 
+211 : techcrunch.com/ : false : 
+215 : freewebs.com/ : false : Unknown host
+209 : sphinn.com/ : false : Unknown host
+218 : independent.co.uk/ : false : 
+216 : ezinearticles.com/ : false : 
+213 : squarespace.com/ : false : 
+221 : google.nl/ : false : 
+219 : mediafire.com/ : false : 
+115 : rakuten.co.jp/ : false : Read timed out
+223 : imgur.com/ : false : 
+224 : irs.gov/ : false : sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+227 : bizjournals.com/ : false : 
+226 : wunderground.com/ : false : 
+174 : goo.ne.jp/ : false : 
+160 : ocn.ne.jp/ : false : 
+230 : cloudflare.com/ : false : 
+234 : cbslocal.com/ : false : 
+228 : who.int/ : false : 
+235 : ycombinator.com/ : false : Unknown host
+236 : opensource.org/ : false : 
+207 : mysql.com/ : false : 
+217 : ucoz.ru/ : false : 
+222 : reverbnation.com/ : false : 
+214 : icq.com/ : false : 
+229 : soup.io/ : false : 
+198 : vkontakte.ru/ : false : 
+233 : senate.gov/ : false : 
+231 : people.com.cn/ : false : 
+241 : drupal.org/ : false : 
+245 : wikia.com/ : false : 
+237 : spiegel.de/ : false : 
+246 : about.me/ : false : 
+220 : xinhuanet.com/ : false : 
+250 : fda.gov/ : false : fda.gov
+249 : gmpg.org/ : false : 
+232 : ustream.tv/ : false : Unknown host
+242 : last.fm/ : false : 
+252 : github.com/ : false : 
+253 : cbc.ca/ : false : java.security.cert.CertificateException: No subject alternative DNS name matching cbc.ca found.
+244 : skype.com/ : false : 
+247 : webmd.com/ : false : Unknown host
+257 : google.com.br/ : false : 
+225 : webnode.com/ : false : 
+240 : businessinsider.com/ : false : 
+262 : topsy.com/ : false : topsy.com
+254 : umich.edu/ : false : 
+261 : discovery.com/ : false : Unknown host
+264 : google.cn/ : false : 
+239 : nature.com/ : false : 
+260 : wiley.com/ : false : 
+243 : privacy.gov.au/ : false : Unexpected end of file from server
+269 : google.pl/ : false : 
+255 : jugem.jp/ : false : 
+266 : moonfruit.com/ : false : Unknown host
+267 : dropbox.com/ : false : 
+265 : surveymonkey.com/ : false : 
+273 : behance.net/ : false : 
+258 : ifeng.com/ : false : 
+276 : auda.org.au/ : false : Unknown host
+256 : shinystat.com/ : false : 
+277 : marketwatch.com/ : false : java.security.cert.CertificateException: No subject alternative DNS name matching marketwatch.com found.
+274 : goodreads.com/ : false : 
+272 : uol.com.br/ : false : Unknown host
+279 : networksolutions.com/ : false : handshake alert:  unrecognized_name
+271 : ft.com/ : false : 
+280 : state.gov/ : false : 
+284 : census.gov/ : false : Received fatal alert: handshake_failure
+278 : ed.gov/ : false : 
+270 : prnewswire.com/ : false : 
+283 : ftc.gov/ : false : 
+287 : nydailynews.com/ : false : 
+268 : exblog.jp/ : false : 
+263 : paypal.com/ : false : 
+285 : quantcast.com/ : false : 
+290 : ow.ly/ : false : Connection refused (Connection refused)
+288 : zdnet.com/ : false : 
+294 : theatlantic.com/ : false : 
+291 : meetup.com/ : false : 
+275 : netvibes.com/ : false : 
+295 : google.com.au/ : false : 
+292 : netscape.com/ : false : 
+289 : cafepress.com/ : false : 
+286 : economist.com/ : false : 
+298 : list-manage.com/ : false : java.security.cert.CertificateException: No subject alternative DNS name matching list-manage.com found.
+281 : sitemeter.com/ : false : 
+301 : friendfeed.com/ : false : java.security.cert.CertificateException: No subject alternative DNS name matching friendfeed.com found.
+303 : patch.com/ : false : 
+282 : liveinternet.ru/ : false : 
+304 : upenn.edu/ : false : 
+302 : ehow.com/ : false : Unknown host
+297 : skyrock.com/ : false : 
+299 : pagesperso-orange.fr/ : false : 
+300 : cdbaby.com/ : false : 
+307 : com.com/ : false : 
+310 : columbia.edu/ : false : Unknown host
+309 : washington.edu/ : false : 
+313 : elegantthemes.com/ : false : 
+306 : diigo.com/ : false : 
+315 : yale.edu/ : false : Unknown host
+248 : youku.com/ : false : 
+308 : slashdot.org/ : false : 
+314 : utexas.edu/ : false : Unknown host
+316 : marriott.com/ : false : 
+305 : engadget.com/ : false : 
+317 : bigcartel.com/ : false : 
+319 : usgs.gov/ : false : 
+311 : nhs.uk/ : false : Unknown host
+322 : hubpages.com/ : false : 
+326 : bloglines.com/ : false : bloglines.com
+318 : ucla.edu/ : false : 
+320 : jigsy.com/ : false : 
+323 : slate.com/ : false : 
+325 : umn.edu/ : false : Unknown host
+312 : abc.net.au/ : false : 
+329 : cargocollective.com/ : false : 
+324 : purevolume.com/ : false : 
+327 : so-net.ne.jp/ : false : java.security.cert.CertificateException: No subject alternative DNS name matching so-net.ne.jp found.
+334 : usnews.com/ : false : Unknown host
+328 : wikispaces.com/ : false : 
+336 : flavors.me/ : false : 
+331 : plala.or.jp/ : false : Unknown host
+333 : jiathis.com/ : false : 
+339 : usa.gov/ : false : 
+340 : edublogs.org/ : false : Unknown host
+332 : infoseek.co.jp/ : false : Unknown host
+341 : lycos.com/ : false : 
+344 : state.tx.us/ : false : state.tx.us
+345 : example.com/ : false : 
+346 : shareasale.com/ : false : 
+330 : howstuffworks.com/ : false : 
+348 : is.gd/ : false : Unknown host
+347 : biblegateway.com/ : false : 
+296 : 1688.com/ : false : 
+342 : wisc.edu/ : false : 
+352 : g.co/ : false : 
+349 : yellowbook.com/ : false : 
+353 : dion.ne.jp/ : false : dion.ne.jp
+335 : xing.com/ : false : 
+343 : thetimes.co.uk/ : false : 
+351 : businesswire.com/ : false : 
+321 : hexun.com/ : false : 
+357 : storify.com/ : false : 
+355 : theglobeandmail.com/ : false : 
+359 : ucoz.com/ : false : 
+360 : gizmodo.com/ : false : 
+338 : hc360.com/ : false : Unknown host
+363 : reference.com/ : false : 
+362 : smh.com.au/ : false : 
+354 : dagondesign.com/ : false : 
+365 : unicef.org/ : false : java.security.cert.CertificateException: No subject alternative DNS name matching unicef.org found.
+358 : salon.com/ : false : 
+366 : devhub.com/ : false : Unknown host
+364 : sun.com/ : false : Unknown host
+361 : psu.edu/ : false : 
+367 : artisteer.com/ : false : 
+371 : trellian.com/ : false : Unknown host
+372 : cocolog-nifty.com/ : false : cocolog-nifty.com
+369 : istockphoto.com/ : false : 
+350 : samsung.com/ : false : Unknown host
+373 : i2i.jp/ : false : 
+370 : answers.com/ : false : 
+356 : booking.com/ : false : 
+337 : desdev.cn/ : false : Read timed out
+378 : sciencedaily.com/ : false : 
+380 : ask.com/ : false : 
+377 : ebay.co.uk/ : false : 
+383 : timesonline.co.uk/ : false : java.security.cert.CertificateException: No subject alternative DNS name matching timesonline.co.uk found.
+381 : springer.com/ : false : Unknown host
+376 : 1und1.de/ : false : 
+382 : canalblog.com/ : false : Unknown host
+379 : paginegialle.it/ : false : 
+374 : t-online.de/ : false : 
+375 : intel.com/ : false : 
+390 : domainmarket.com/ : false : Unknown host
+392 : twitpic.com/ : false : 
+386 : smugmug.com/ : false : 
+389 : cmu.edu/ : false : 
+393 : ovh.net/ : false : 
+396 : google.ru/ : false : 
+388 : globo.com/ : false : Connection refused (Connection refused)
+394 : home.pl/ : false : 
+387 : wufoo.com/ : false : 
+385 : deliciousdays.com/ : false : 
+397 : si.edu/ : false : 
+399 : blogs.com/ : false : Unknown host
+401 : hibu.com/ : false : 
+395 : naver.com/ : false : Unknown host
+400 : sciencedirect.com/ : false : 
+406 : cyberchimps.com/ : false : Unknown host
+403 : hhs.gov/ : false : 
+238 : oaic.gov.au/ : false : Server redirected too many  times (20)
+391 : odnoklassniki.ru/ : false : 
+407 : google.com.hk/ : false : 
+398 : newyorker.com/ : false : 
+412 : cnbc.com/ : false : Received fatal alert: handshake_failure
+410 : zimbio.com/ : false : 
+405 : dot.gov/ : false : 
+411 : chronoengine.com/ : false : 
+402 : hud.gov/ : false : 
+415 : symantec.com/ : false : 
+416 : prlog.org/ : false : 
+408 : jalbum.net/ : false : 
+413 : uiuc.edu/ : false : Unknown host
+419 : mtv.com/ : false : 
+414 : vistaprint.com/ : false : 
+421 : java.com/ : false : 
+423 : japanpost.jp/ : false : japanpost.jp
+420 : webeden.co.uk/ : false : 
+422 : cisco.com/ : false : 
+417 : 360.cn/ : false : 
+424 : 4shared.com/ : false : 
+427 : studiopress.com/ : false : Unknown host
+430 : printfriendly.com/ : false : 
+425 : github.io/ : false : 
+409 : craigslist.org/ : false : 
+418 : indiatimes.com/ : false : 
+433 : simplemachines.org/ : false : 
+426 : mayoclinic.com/ : false : 
+435 : accuweather.com/ : false : Unknown host
+434 : dell.com/ : false : 
+436 : princeton.edu/ : false : 
+432 : omniture.com/ : false : Unknown host
+440 : nyu.edu/ : false : 
+441 : wp.com/ : false : 
+439 : chron.com/ : false : 
+443 : nba.com/ : false : 
+442 : merriam-webster.com/ : false : 
+428 : admin.ch/ : false : 
+437 : fotki.com/ : false : 
+447 : indiegogo.com/ : false : 
+446 : furl.net/ : false : furl.net
+445 : lulu.com/ : false : 
+449 : tuttocitta.it/ : false : Connection refused (Connection refused)
+450 : ox.ac.uk/ : false : 
+444 : shop-pro.jp/ : false : 
+452 : army.mil/ : false : army.mil
+453 : csmonitor.com/ : false : Unknown host
+448 : buzzfeed.com/ : false : 
+455 : tamu.edu/ : false : Unknown host
+451 : mapy.cz/ : false : 
+454 : bravesites.com/ : false : 
+456 : rediff.com/ : false : 
+460 : tiny.cc/ : false : 
+458 : yellowpages.com/ : false : 
+457 : toplist.cz/ : false : 
+459 : va.gov/ : false : 
+461 : netlog.com/ : false : 
+464 : multiply.com/ : false : 
+462 : elpais.com/ : false : 
+467 : nymag.com/ : false : 
+468 : fema.gov/ : false : 
+463 : oakley.com/ : false : 
+466 : hostgator.com/ : false : 
+469 : blogtalkradio.com/ : false : 
+472 : fastcompany.com/ : false : Unknown host
+471 : unblog.fr/ : false : 
+465 : tmall.com/ : false : 
+474 : vinaora.com/ : false : Unknown host
+473 : earthlink.net/ : false : 
+476 : aboutads.info/ : false : 
+475 : msu.edu/ : false : 
+470 : china.com.cn/ : false : 
+480 : dyndns.org/ : false : handshake alert:  unrecognized_name
+479 : seattletimes.com/ : false : 
+477 : ucsd.edu/ : false : 
+483 : tinypic.com/ : false : 
+482 : sbwire.com/ : false : 
+484 : acquirethisname.com/ : false : Connection refused (Connection refused)
+486 : walmart.com/ : false : 
+487 : pen.io/ : false : Unknown host
+485 : shutterfly.com/ : false : 
+489 : woothemes.com/ : false : 
+478 : sogou.com/ : false : Unknown host
+481 : 123-reg.co.uk/ : false : 
+491 : themeforest.net/ : false : Unknown host
+488 : arizona.edu/ : false : 
+490 : scientificamerican.com/ : false : 
+492 : spotify.com/ : false : 
+495 : arstechnica.com/ : false : 
+493 : cam.ac.uk/ : false : 
+498 : bloglovin.com/ : false : Unknown host
+494 : unc.edu/ : false : 
+497 : illinois.edu/ : false : 
+501 : pcworld.com/ : false : 
+499 : nsw.gov.au/ : false : Unknown host
+500 : ihg.com/ : false : 
+496 : hao123.com/ : false : 
+31 : delicious.com/ : false : Operation timed out (Connection timed out)
+38 : macromedia.com/ : false : Operation timed out (Connection timed out)
+23 : qq.com/ : false : Operation timed out (Connection timed out)
+173 : noaa.gov/ : false : Operation timed out (Connection timed out)
+175 : comsenz.com/ : false : Operation timed out (Connection timed out)
+179 : discuz.net/ : false : Operation timed out (Connection timed out)
+201 : examiner.com/ : false : Operation timed out (Connection timed out)
+259 : mac.com/ : false : Operation timed out (Connection timed out)
+251 : redcross.org/ : false : Operation timed out (Connection timed out)
+293 : chicagotribune.com/ : false : Operation timed out (Connection timed out)
+368 : unesco.org/ : false : Operation timed out (Connection timed out)
+384 : de.vu/ : false : Operation timed out (Connection timed out)
+404 : dmoz.org/ : false : Operation timed out (Connection timed out)
+429 : virginia.edu/ : false : Operation timed out (Connection timed out)
+431 : mlb.com/ : false : Operation timed out (Connection timed out)
+438 : comcast.net/ : false : Operation timed out (Connection timed out)
