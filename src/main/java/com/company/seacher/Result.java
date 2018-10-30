@@ -34,12 +34,10 @@ public class Result extends Task {
 
     public String print() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.getLineNum()).append(" : ").append(this.getWebUrl())
-                .append(" : ");
+        sb.append(this.getLineNum()).append(",").append(this.getWebUrl())
+                .append(",").append(found).append(",");
         if(error != null && error != "") {
-            sb.append(" : ").append(error);
-        } else {
-            sb.append(found);
+            sb.append("Search Failed: " + error);
         }
         sb.append(System.lineSeparator());
         return sb.toString();

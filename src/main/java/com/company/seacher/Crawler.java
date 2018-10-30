@@ -52,26 +52,37 @@ public class Crawler implements Runnable{
         }
     }
 
-    // TODO Close resources
-    // TODO remove sysouts
+
     private boolean lookup(Task m) throws IOException {
-        // try http first
-        HttpURLConnection httpConnection = (HttpURLConnection) getConnection("http://" + m.getWebUrl());
-        if(httpConnection.getResponseCode() != HttpURLConnection.HTTP_OK) {
-            // try https
-            httpConnection = (HttpsURLConnection) getConnection("https://" + m.getWebUrl());
-            // throw exception if the response is still not 200
+        HttpURLConnection httpConnection = null;
+        try {
+            // try http first
+            httpConnection = (HttpURLConnection) getConnection("http://" + m.getWebUrl());
             if(httpConnection.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                throw new UnknownHostException("Unknown host");
+                // try https
+                httpConnection = (HttpsURLConnection) getConnection("https://" + m.getWebUrl());
+                // throw exception if the response is still not 200
+                if(httpConnection.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                    throw new UnknownHostException("Unknown host");
+                }
             }
+        } catch(Exception e) {
+            throw new IOException(e);
         }
-        BufferedReader br = new BufferedReader(new InputStreamReader( httpConnection.getInputStream()));
-        String line;
-        while ((line = br.readLine()) != null) {
-            // exit early if the term is in the current line
-            // no need to load the entire website content in memory
-            boolean found = Pattern.compile(Pattern.quote(this.term), Pattern.CASE_INSENSITIVE).matcher(line).find();
-            if(found) return true;
+
+        // auto close resources
+        try(
+                InputStreamReader is = new InputStreamReader(httpConnection.getInputStream());
+                BufferedReader br = new BufferedReader(is);
+        ) {
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                // exit early if the term is in the current line
+                // no need to load the entire website content in memory
+                boolean found = Pattern.compile(Pattern.quote(this.term), Pattern.CASE_INSENSITIVE).matcher(line).find();
+                if (found) return true;
+            }
         }
         return false;
     }
