@@ -1,7 +1,8 @@
 package com.company.seacher;
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
-import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -10,6 +11,8 @@ public class ResultAggregator implements Runnable{
 
     private BlockingQueue<Result> results;
     private String resultFilePath;
+
+    final static Logger logger = Logger.getLogger(ResultAggregator.class);
 
     public ResultAggregator(BlockingQueue<Result> results, String resultFilePath) {
         this.results = results;
@@ -23,7 +26,7 @@ public class ResultAggregator implements Runnable{
             try {
                 r = results.take();
             } catch (InterruptedException e) {
-                System.err.println(String.format("%s interrupted!", Thread.currentThread().getName()));
+                logger.error(String.format("%s interrupted!", Thread.currentThread().getName()));
             }
             if(r != null) {
                 writeResult(r);

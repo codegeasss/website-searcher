@@ -1,5 +1,7 @@
 package com.company.seacher;
 
+import org.apache.log4j.Logger;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -13,6 +15,8 @@ class BlockingQueue<E> {
     private Queue<E> queue;
     int max;
     private AtomicBoolean terminate;
+
+    final static Logger logger = Logger.getLogger(BlockingQueue.class);
 
     public BlockingQueue(int max) {
         queue = new LinkedList<>();
@@ -41,7 +45,7 @@ class BlockingQueue<E> {
         while (queue.isEmpty())   {
             // exit on termination signal. no more events to consume
             if(terminate.get()) {
-                System.out.println( String.format("%s terminated!", Thread.currentThread().getName()) );
+                logger.info(String.format("%s terminated!", Thread.currentThread().getName()));
                 return null;
             }
             wait(5000);

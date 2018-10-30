@@ -1,5 +1,7 @@
 package com.company.seacher;
 
+import org.apache.log4j.Logger;
+
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,6 +16,8 @@ public class Searcher {
     BlockingQueue<Task> tasks;
     BlockingQueue<Result> results;
 
+    final static Logger logger = Logger.getLogger(Searcher.class);
+
 
     public Searcher(String fileUrl, String resultsUrl, String searchTerm) {
         this.fileUrl = fileUrl;
@@ -25,7 +29,7 @@ public class Searcher {
     }
 
     public void search() {
-        System.out.println("Initiating search for term: " + searchTerm);
+        logger.info("Initiating search for term: " + searchTerm);
         ThreadManager<ResultAggregator> aggrThreadManager = null;
         ThreadManager<Crawler> crawlerThreadManager = null;
         String err = "";
@@ -36,7 +40,8 @@ public class Searcher {
                     () ->  new ResultAggregator(this.results, this.resultsUrl),
                     "ResultAggregator"
             );
-            System.out.println("Launching single result aggregator");
+
+            logger.info("Launching single result aggregator");
             aggrThreadManager.launch(1);
 
             // launch crawlers to start processing urls
@@ -45,7 +50,8 @@ public class Searcher {
                     () ->  new Crawler(tasks, results, this.searchTerm),
                     "Crawler"
             );
-            System.out.println("Launching 20 crawlers");
+
+            logger.info("Launching 20 crawlers");
             crawlerThreadManager.launch(20);
 
             generateTasks();
@@ -55,42 +61,46 @@ public class Searcher {
         } finally { // all the shutdown/cleanup activities in the finally block
             // done with tasks
             // send termination signal to tasks queue
-            System.out.println("Terminating tasks queue to signal crawlers to shutdown");
+            logger.info("Terminating tasks queue to signal crawlers to shutdown");
             tasks.terminate();
+
             // wait for all crawlers to finish
-            System.out.println("Waiting for crawlers to finish processing");
+            logger.info("Waiting for crawlers to finish processing");
             if(crawlerThreadManager != null) {
                 try {
                     crawlerThreadManager.join();
                 } catch (InterruptedException e) {
-                    System.err.println("Crawler thread interrupted while waiting to join - " + e.getMessage());
+                    logger.error("Crawler thread interrupted while waiting to join - " + e.getMessage());
                 }
             }
-            System.out.println("Successfully terminated all crawler threads");
+            logger.info("Successfully terminated all crawler threads");
+
             // done with results
             // send termination signal to results queue
-            System.out.println("Terminating results queue to signal aggregator to shutdown");
+            logger.info("Terminating results queue to signal aggregator to shutdown");
             results.terminate();
+
             // wait for result aggregator to finish
-            System.out.println("Waiting for aggregator to finish processing");
+            logger.info("Waiting for aggregator to finish processing");
             if(aggrThreadManager != null) {
                 try {
                     aggrThreadManager.join();
                 } catch (InterruptedException e) {
-                    System.err.println("Result aggregator thread interrupted while waiting to join - " + e.getMessage());
+                    logger.error("Result aggregator thread interrupted while waiting to join - " + e.getMessage());
                 }
             }
-            System.out.println("Successfully terminated aggregator thread");
+            logger.info("Successfully terminated aggregator thread");
+
             if(err == "")
-                System.out.println("Search complete. Check " + resultsUrl + " for summary!");
+                logger.info("Search complete. Check " + resultsUrl + " for summary!");
             else
-                System.err.println("Search failed with error - " + err);
+                logger.info("Search failed with error - " + err);
         }
 
     }
 
     private void generateTasks() throws IOException {
-        System.out.println("Reading web urls from file: " + fileUrl);
+        logger.info("Reading web urls from file: " + fileUrl);
         HttpsURLConnection conn = (HttpsURLConnection) new URL(this.fileUrl).openConnection();
         conn.setReadTimeout(5000);
         // auto close resources
@@ -109,13 +119,13 @@ public class Searcher {
                     // add urls to be processed in task queue
                     tasks.put(new Task(webUrl, lineNum));
                 } catch (IllegalArgumentException e) {
-                    System.err.println(e.getMessage());
+                    logger.error(e.getMessage());
                 } catch (InterruptedException e) {
-                    System.err.println("Main thread interrupted - " + e.getMessage());
+                    logger.error("Main thread interrupted - " + e.getMessage());
                 }
             }
         }
-        System.out.println("Done reading web urls from file: " + fileUrl);
+        logger.info("Done reading web urls from file: " + fileUrl);
     }
 
 

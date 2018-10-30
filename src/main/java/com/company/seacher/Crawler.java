@@ -1,6 +1,8 @@
 package com.company.seacher;
 
 
+import org.apache.log4j.Logger;
+
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,6 +19,8 @@ public class Crawler implements Runnable{
     BlockingQueue<Result> results;
     String term;
 
+    final static Logger logger = Logger.getLogger(Crawler.class);
+
     public Crawler(BlockingQueue<Task> incoming, BlockingQueue<Result> results, String term) {
         this.incoming = incoming;
         this.results = results;
@@ -30,7 +34,7 @@ public class Crawler implements Runnable{
             try {
                 t = incoming.take();
             } catch (InterruptedException e) {
-                System.err.println(String.format("%s interrupted!", Thread.currentThread().getName()));
+                logger.error(String.format("%s interrupted!", Thread.currentThread().getName()));
             }
             if(t != null) {
                 boolean found = false;
@@ -43,8 +47,8 @@ public class Crawler implements Runnable{
 
                 try {
                     results.put(new Result(t, found, err));
-                } catch (Throwable e) {
-                    System.err.println(String.format("%s interrupted!", Thread.currentThread().getName()));
+                } catch (InterruptedException e) {
+                    logger.error(String.format("%s interrupted!", Thread.currentThread().getName()));
                 }
             } else { // termination condition
                 break;
