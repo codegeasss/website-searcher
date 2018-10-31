@@ -6,6 +6,9 @@ bin/
 results.txt
 technology
 
+### Log file ###
+website-searcher.log
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

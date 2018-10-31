@@ -1,17 +1,16 @@
 package com.company.seacher;
 
 
+import com.company.seacher.utils.HttpHelper;
+import com.company.seacher.utils.Matcher;
 import org.apache.log4j.Logger;
 
-import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.UnknownHostException;
-import java.util.regex.Pattern;
 
 public class Crawler implements Runnable{
 
@@ -29,6 +28,7 @@ public class Crawler implements Runnable{
 
     @Override
     public void run() {
+        Matcher matcher = new Matcher(term);
         while(true) {
             Task t = null;
             try {
@@ -40,13 +40,13 @@ public class Crawler implements Runnable{
                 boolean found = false;
                 String err = "";
                 try {
-                    found = lookup(t);
+                    found = lookup(t, matcher);
                 } catch (IOException e) {
                     err = e.getMessage();
                 }
 
                 try {
-                    results.put(new Result(t, found, err));
+                    results.put(new Result(t, term, found, err));
                 } catch (InterruptedException e) {
                     logger.error(String.format("%s interrupted!", Thread.currentThread().getName()));
                 }
@@ -57,23 +57,8 @@ public class Crawler implements Runnable{
     }
 
 
-    private boolean lookup(Task m) throws IOException {
-        HttpURLConnection httpConnection = null;
-        try {
-            // try http first
-            httpConnection = (HttpURLConnection) getConnection("http://" + m.getWebUrl());
-            if(httpConnection.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                // try https
-                httpConnection = (HttpsURLConnection) getConnection("https://" + m.getWebUrl());
-                // throw exception if the response is still not 200
-                if(httpConnection.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                    throw new UnknownHostException("Unknown host");
-                }
-            }
-        } catch(Exception e) {
-            throw new IOException(e);
-        }
-
+    private boolean lookup(Task m, Matcher matcher) throws IOException {
+        HttpURLConnection httpConnection = HttpHelper.getConnection(m.getWebUrl());
         // auto close resources
         try(
                 InputStreamReader is = new InputStreamReader(httpConnection.getInputStream());
@@ -84,8 +69,7 @@ public class Crawler implements Runnable{
             while ((line = br.readLine()) != null) {
                 // exit early if the term is in the current line
                 // no need to load the entire website content in memory
-                boolean found = Pattern.compile(Pattern.quote(this.term), Pattern.CASE_INSENSITIVE).matcher(line).find();
-                if (found) return true;
+                if (matcher.isMatch(line)) return true;
             }
         }
         return false;

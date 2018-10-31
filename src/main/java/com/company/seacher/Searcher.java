@@ -1,12 +1,13 @@
 package com.company.seacher;
 
+import com.company.seacher.utils.HttpHelper;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderHeaderAware;
 import org.apache.log4j.Logger;
 
-import javax.net.ssl.HttpsURLConnection;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.URL;
+import java.net.HttpURLConnection;
 
 public class Searcher {
 
@@ -101,42 +102,26 @@ public class Searcher {
 
     private void generateTasks() throws IOException {
         logger.info("Reading web urls from file: " + fileUrl);
-        HttpsURLConnection conn = (HttpsURLConnection) new URL(this.fileUrl).openConnection();
-        conn.setReadTimeout(5000);
+        HttpURLConnection conn =  HttpHelper.getConnection(this.fileUrl);
         // auto close resources
         try(
                 InputStreamReader is = new InputStreamReader(conn.getInputStream());
-                BufferedReader br = new BufferedReader(is);
+                CSVReader reader = new CSVReaderHeaderAware(is);
         ) {
-            String line;
-            int lineNum = -1;
-            while ((line = br.readLine()) != null) {
-                lineNum++;
-                // skip header
-                if(lineNum == 0) continue;
+
+            String [] nextLine;
+            while ((nextLine = reader.readNext()) != null) {
                 try {
-                    String webUrl = extractWebUrl(line);
                     // add urls to be processed in task queue
-                    tasks.put(new Task(webUrl, lineNum));
-                } catch (IllegalArgumentException e) {
-                    logger.error(e.getMessage());
-                } catch (InterruptedException e) {
+                    tasks.put(new Task(nextLine[1], Integer.valueOf(nextLine[0])));
+                }  catch (InterruptedException e) {
                     logger.error("Main thread interrupted - " + e.getMessage());
+                } catch (Exception e) {
+                    logger.error("Failed to read url details from line - " + nextLine + " : " + e.getMessage());
                 }
             }
         }
         logger.info("Done reading web urls from file: " + fileUrl);
-    }
-
-
-    private String extractWebUrl(String line) throws IllegalArgumentException {
-        if(line != null) {
-            String[] cols = line.split(",");
-            if(cols.length >= 2) {
-                return cols[1];
-            }
-        }
-        throw new IllegalArgumentException("Failed to extract web url. Invalid line - " + line);
     }
 
 }
