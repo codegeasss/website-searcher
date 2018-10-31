@@ -20,7 +20,10 @@ Result for a web url is in the format:
 Match result defaults to false for failed URLs.
 
 Please note that, if the `results.txt` already exits in the current directory, it would be appended with new result when 
-the program is run multiple times.   
+the program is run multiple times.
+
+Right now search term is hardcoded inside `App.java` file which contains the `main` method. If you want to change the search term or run unit tests, you 
+can import the project as maven project into an IDE such as IntelliJ.     
  
 # Implementation
 
@@ -49,9 +52,15 @@ As the name suggests, `ResultAggregator` class is responsible for aggregating al
 to `results` file. Aggregator listens to results queue and writes to results file as soon as a result is available
 This thread terminates when a NULL is received from results queue, which is a signal from the main thread to terminate.
 
+#### BlockingQueue
+
+Thread safe bounded queue implementation using LinkedList. In practice we could also use one of the 
+Java <code>BlockingQueue</code> implementations instead.
+
 # Notes
 
-* Although url connection tries both http as well as https, it would fail if the url is malformed or redirected. Redirect is not followed
+* Although url connection tries both http as well as https, it would fail if the url is malformed or redirected. 
+Redirect is not followed. Also some URLs might fail due to missing SSL certificates.
 * Text matching is a simple regex matching of the term in the entire website html. We can improve this by matching 
 only the `body` of website, ignoring `meta` tags, scripts and other html elements
 * Ordering of lines in `results.txt` doesn't follow the original ordering from the `urls` file due to the multi threaded 
