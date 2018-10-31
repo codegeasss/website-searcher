@@ -1,5 +1,8 @@
 package com.company.seacher;
 
+/**
+ * Represents a single result with URL and match details
+ */
 public class Result extends Task {
 
     String term;

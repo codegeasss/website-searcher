@@ -9,9 +9,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 
+/**
+ * This class implements the crawler thread
+ * Once launched, crawler thread listens to incoming queue for new tasks.
+ * As soon as a task is available, crawler would fetch the contents from the site and
+ * does a search for the term. The result is then queued up in results queue.
+ * This thread terminates when a NULL is received from incoming queue, which is a signal from
+ * the main thread to terminate
+ */
 public class Crawler implements Runnable{
 
     BlockingQueue<Task> incoming;
@@ -26,6 +32,10 @@ public class Crawler implements Runnable{
         this.term = term;
     }
 
+    /**
+     * Run method which waits on incoming queue for tasks
+     * Returns when a NULL value is received in the queue
+     */
     @Override
     public void run() {
         Matcher matcher = new Matcher(term);
@@ -56,9 +66,16 @@ public class Crawler implements Runnable{
         }
     }
 
-
-    private boolean lookup(Task m, Matcher matcher) throws IOException {
-        HttpURLConnection httpConnection = HttpHelper.getConnection(m.getWebUrl());
+    /**
+     * Connects to web url and looks for a match
+     *
+     * @param task contains term and url details
+     * @param matcher test matcher
+     * @throws IOException if url is not reachable
+     * @return boolean true for a positive match
+     */
+    private boolean lookup(Task task, Matcher matcher) throws IOException {
+        HttpURLConnection httpConnection = HttpHelper.getConnection(task.getWebUrl());
         // auto close resources
         try(
                 InputStreamReader is = new InputStreamReader(httpConnection.getInputStream());
@@ -73,11 +90,5 @@ public class Crawler implements Runnable{
             }
         }
         return false;
-    }
-
-    private URLConnection getConnection(String url) throws IOException {
-        URLConnection conn = new URL(url).openConnection();;
-        conn.setReadTimeout(5000);
-        return conn;
     }
 }

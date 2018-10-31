@@ -1,5 +1,8 @@
 package com.company.seacher;
 
+/**
+ * Represents a single task with web url and its corresponding line number from the urls file
+ */
 public class Task {
 
     private String webUrl;

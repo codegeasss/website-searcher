@@ -7,6 +7,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
+/**
+ * Thread implementation for result aggregator
+ * As the name suggests, this thread listens to results queue and writes
+ * to results file as soon as one is available
+ * This thread terminates when a NULL is received from results queue, which is a signal from
+ * the main thread to terminate
+ */
 public class ResultAggregator implements Runnable{
 
     private BlockingQueue<Result> results;
@@ -19,6 +26,10 @@ public class ResultAggregator implements Runnable{
         this.resultFilePath = resultFilePath;
     }
 
+    /**
+     * Run method which waits on results queue for task results
+     * Returns when a NULL value is received in the queue
+     */
     @Override
     public void run() {
         while(true) {
@@ -36,11 +47,18 @@ public class ResultAggregator implements Runnable{
         }
     }
 
+    /**
+     * Writes results to the results file
+     * New file is created if results file doesn't exist
+     * Otherwise results are appended to the existing file
+     *
+     * @param   r Result object
+     */
     private void writeResult(Result r) {
         try {
             Files.write(Paths.get(resultFilePath), r.print().getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Failed to write result " + r + " - " + e.getMessage());
         }
     }
 }

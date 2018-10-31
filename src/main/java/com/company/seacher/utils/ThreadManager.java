@@ -1,9 +1,12 @@
-package com.company.seacher;
+package com.company.seacher.utils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * Helper class for managing threads
+ */
 public class ThreadManager<T extends Runnable> {
     private Supplier<T> supplier;
     private String name;
@@ -15,6 +18,11 @@ public class ThreadManager<T extends Runnable> {
         this.threads = new ArrayList<>();
     }
 
+    /**
+     * Starts a fixed number of threads
+     *
+     * @param  count number of threads to start
+     */
     public void launch(int count) {
         for(int i = 1; i <= count; i++) {
             Thread t = new Thread(supplier.get(), name + i);
@@ -23,6 +31,11 @@ public class ThreadManager<T extends Runnable> {
         }
     }
 
+    /**
+     * Waits for all the threads to return
+     *
+     * @return InterruptedException
+     */
     public void join() throws InterruptedException {
         for(Thread t : threads) {
             t.join();

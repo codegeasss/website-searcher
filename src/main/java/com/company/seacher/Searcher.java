@@ -1,6 +1,7 @@
 package com.company.seacher;
 
 import com.company.seacher.utils.HttpHelper;
+import com.company.seacher.utils.ThreadManager;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderHeaderAware;
 import org.apache.log4j.Logger;
@@ -9,6 +10,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 
+/**
+ * Entry point of the application responsible for creating tasks from urls file
+ * and launching crawlers and result aggregator threads
+ * Also makes sure all the threads are terminated to make a clean exit
+ */
 public class Searcher {
 
     String fileUrl;
@@ -29,6 +35,11 @@ public class Searcher {
         results = new BlockingQueue<>(100);
     }
 
+    /**
+     * Launches 20 crawlers and a result aggregator and starts adding tasks to
+     * queue for each url from the urls file
+     * Sends shut down signal to both tasks and results queue after all url's are converted to tasks
+     */
     public void search() {
         logger.info("Initiating search for term: " + searchTerm);
         ThreadManager<ResultAggregator> aggrThreadManager = null;

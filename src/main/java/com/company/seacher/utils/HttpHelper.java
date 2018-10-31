@@ -7,8 +7,19 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.UnknownHostException;
 
+/**
+ * Helper class to create URL connection
+ */
 public class HttpHelper {
 
+    /**
+     * Creates a connection based on protocol(http vs https)
+     * Both protocols are tried if the url doesn't specify one
+     *
+     * @param   url Url to connect
+     * @throws IOException if url is not reachable
+     * @return HttpURLConnection
+     */
     public static HttpURLConnection getConnection(String url) throws IOException {
         HttpURLConnection httpConnection = null;
         // is https?
